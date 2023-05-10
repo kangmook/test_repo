@@ -24,7 +24,7 @@ pipeline {
     stage('deploy kubernetes') {
       steps {
         sh '''
-        kubectl create deployment sungmook-prod --image=kangmook/sungmook:v3.0
+        kubectl create deployment sungmook-prod --image=kangmook/sungmook:v4.0
         kubectl expose deployment sungmook-prod --type=LoadBalancer --port=8080 \
                                                --target-port=80 --name=sungmook-prod-svc
         '''
