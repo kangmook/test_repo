@@ -17,7 +17,7 @@ pipeline {
     stage('deploy kubernetes') {
       steps {
         sh '''
-        kubectl create deployment sungmook-prod --image=192.168.1.10:8443/echo-ip
+        kubectl create deployment sungmook-prod --image=kangmook/sungmook:v1.0
         kubectl expose deployment sungmook-prod --type=LoadBalancer --port=8080 \
                                                --target-port=80 --name=sungmook-prod-svc
         '''
